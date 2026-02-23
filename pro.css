@@ -149,12 +149,6 @@ nav a:hover {
     font-size:10%;
 }
 
-/* توزيع الأيقونات حول الصورة بشكل دائري */
-.ai-icons span:nth-child(1) { top:0%; left:50%; transform:translate(-50%, -50%); }    /* أعلى */
-.ai-icons span:nth-child(2) { top:50%; right:0%; transform:translate(50%, -50%); }     /* يمين */
-.ai-icons span:nth-child(3) { bottom:0%; left:50%; transform:translate(-50%, 50%); }   /* أسفل */
-.ai-icons span:nth-child(4) { top:50%; left:0%; transform:translate(-50%, -50%); }     /* يسار */
-
 /* Sections */
 section {
     padding:80px 5%;
@@ -217,8 +211,6 @@ section {
 }
 
 /* Responsive adjustments */
-
-/* Tablets & Large Phones */
 @media(max-width:980px){
     .hero{
         flex-direction:column;
@@ -234,13 +226,9 @@ section {
     .hero-image {
         max-width:250px;
     }
-    .hero-image img{
-        width:100%;
-        height:auto;
-    }
 }
 
-/* Mobile (smaller than 768px) */
+/* Mobile */
 @media(max-width:768px){
     .menu-toggle {
         display:block;
@@ -285,7 +273,7 @@ section {
     }
 }
 
-/* Small Phones (under 480px) */
+/* Small Phones */
 @media(max-width:480px){
     .hero-image {
         max-width:150px;

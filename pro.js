@@ -16,7 +16,7 @@ class Particle{
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = 2;
-        this.speedX = (Math.random() - 0.5) * 0.5; // بطيء
+        this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
     }
     update(){
@@ -33,14 +33,14 @@ class Particle{
     }
 }
 
-function init(){
+function initParticles(){
     particles = [];
     for(let i=0;i<100;i++){
         particles.push(new Particle());
     }
 }
 
-function connect(){
+function connectParticles(){
     for(let a=0;a<particles.length;a++){
         for(let b=a;b<particles.length;b++){
             let dx = particles[a].x - particles[b].x;
@@ -60,11 +60,11 @@ function connect(){
 function animateCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     particles.forEach(p=>{p.update();p.draw();});
-    connect();
+    connectParticles();
     requestAnimationFrame(animateCanvas);
 }
 
-init();
+initParticles();
 animateCanvas();
 
 // AI Icons Rotation
@@ -100,4 +100,12 @@ cards.forEach(card=>{
         document.querySelectorAll(".project-detail").forEach(d=>d.style.display="none");
         detail.style.display = isVisible ? "none" : "block";
     });
+});
+
+// Hamburger Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('nav ul.nav-list');
+
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
 });
